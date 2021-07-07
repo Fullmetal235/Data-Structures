@@ -10,10 +10,15 @@ class Queue:
         # self.storage = ?
 
     def enqueue(self, value):
-        pass
+        self.storage.add_to_head(value)
+        self.size += 1
 
     def dequeue(self):
-        pass
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_from_tail()
+        else:
+            return None
 
     def len(self):
-        pass
+        return self.size
